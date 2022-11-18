@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HW_BankProfit
+{
+    class Program
+    {
+        public static double bank_profit(int first_cash, int final_cash, int profit)
+        {
+            double cash_calculator = first_cash;
+            int counter = 0;
+            while (cash_calculator <= final_cash) {
+                cash_calculator = (cash_calculator * profit / 100) + cash_calculator;
+                counter += 1;
+            }
+            return (counter);
+        }
+        public static void Main()
+        {
+            Console.WriteLine("please enter first cash :");
+            int first_cash = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("please enter final cash");
+            int final_cash = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("please enter profit :");
+            int profit = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("you should wate for ");
+            Console.WriteLine(bank_profit(first_cash, final_cash, profit));
+            Console.WriteLine("monthes");
+            Console.ReadLine();
+
+
+        }
+    }
+}
