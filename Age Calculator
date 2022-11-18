@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HW_pepole_age
+{
+    class Program
+    {   
+        public static void Main()
+        {
+            Console.WriteLine("please enter number of days : ");
+            int all_days = Convert.ToInt32(Console.ReadLine());
+            int years = 0;
+            int month = 0;
+            int days = 0;
+            int help_variable = 0;
+            years = all_days / 365;
+            help_variable = all_days % 365;
+            month = help_variable / 12;
+            days = help_variable % 12;
+            Console.WriteLine("your eage is : ");
+            Console.WriteLine(years);
+            Console.WriteLine("years,and");
+            Console.WriteLine(month);
+            Console.WriteLine("monthes,and");
+            Console.WriteLine(days);
+            Console.WriteLine("days");
+            Console.ReadLine();
+
+
+        }
+    }
+}
