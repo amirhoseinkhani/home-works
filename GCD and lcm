@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HW_BMM_KMM
+{
+    class Program
+    {
+        public static int BMM (int num1, int num2)
+        {
+            int num3 = 0;
+            int baghi = num1;
+            if (num1 < num2)
+            {
+                num3 = num1;
+                num1 = num2;
+                num2 = num3;
+            }
+            if(num1 != num2) {
+                while (baghi != 0)
+                {
+                    baghi = num1 % num2;
+                    num1 = num2;
+                    num2 = baghi;
+                }
+
+            }
+            
+           
+            return (num1);
+        }
+
+        public static int KMM (int num1, int num2)
+        {
+            int num3 = 0;
+            num3 = (num1 * num2) / (BMM(num1, num2));
+            return (num3);
+        }
+
+        public static void Main()
+        {
+            Console.WriteLine("please enter first number :");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("please enter second number :");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("B,M,M is :");
+            Console.WriteLine(BMM(num1,num2));
+            Console.WriteLine("K,M,M is :");
+       Console.WriteLine(KMM(num1,num2));
+            Console.ReadLine();
+        }
+    }
+}
